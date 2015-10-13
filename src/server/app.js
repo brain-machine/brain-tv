@@ -10,7 +10,6 @@ var compress = require('compression')
 var cors = require('cors')
 var favicon = require('serve-favicon')
 var logger = require('morgan')
-var errorHandler = require('./routes/utils/errorHandler')
 var routes
 
 var environment = process.env.NODE_ENV
@@ -22,15 +21,8 @@ app.use(compress())                                 // compress response data wi
 app.use(logger('combined'))                         // create "middleware" using combined format to STDOUT
 app.use(favicon(__dirname + '/favicon.ico'))        // configure favicon file
 app.use(cors())                                     // enable ALL CORS requests
-app.use(errorHandler().init)                        // init error handler util
 
 routes = require('./routes/index')(app);
-
-console.log('About to crank up node');
-console.log('PORT=' + port);
-console.log('NODE_ENV=' + environment);
-
-var source = '';
 
 app.get('/ping', function (req, res, next) {
     console.log(req.body);
@@ -59,8 +51,6 @@ switch (environment) {
 }
 
 app.listen(port, function () {
-    console.log('Express server listening on port ' + port);
-    console.log('env = ' + app.get('env') +
-        '\n__dirname = ' + __dirname +
-        '\nprocess.cwd = ' + process.cwd());
+    console.log('Express server listening on port ' + port + '(' + app.get('env') + ')');
+    console.log('__dirname = ' + __dirname + '\nprocess.cwd = ' + process.cwd());
 });

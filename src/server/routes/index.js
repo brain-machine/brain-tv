@@ -3,8 +3,7 @@
  */
 'use strict'
 
-var express = require('express')
-var serveIndex = require('serve-index')
+var dataConfig = require('../data/config');
 var serveStatic = require('serve-static')
 var fs = require('fs')
 
@@ -13,14 +12,14 @@ var oneDay = 86400000
 module.exports = function (app) {
 
     // provides static access to dropbox folder with one day cache.
-    app.use('/api/dropbox', serveStatic('/home/falvojr/Dropbox', {
+    app.use('/api/images', serveStatic(dataConfig.PATH_DROPBOX, {
         maxAge: oneDay
     }));
 
-    app.get('/api/dropbox', getDropboxFiles);
+    app.get('/api/images', getDropboxFiles);
 
     function getDropboxFiles(req, res, next) {
-        fs.readdir('/home/falvojr/Dropbox', function (err, data) {
+        fs.readdir(dataConfig.PATH_DROPBOX, function (err, data) {
             if (err) throw err;
             var images = [];
             console.log(data)
