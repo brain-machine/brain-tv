@@ -20,8 +20,6 @@
         /*
          * Feature areas
          */
-        'app.avengers',
-        'app.dashboard',
         'app.layout'
     ]);
 
