@@ -1,40 +1,41 @@
 {
   "name": "brain-tv",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Project for the domain of smart advertisements",
   "scripts": {
+    "init": "npm install",
+    "install": "bower install",
+    "start": "node src/server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Brain Machine",
   "contributors": [
-    {
-      "name": "Venilton FalvoJr",
-      "email": "falvojr@gmail.com"
-    },
-    {
-      "name": "Renan Johannsen de Paula",
-      "email": "renanjohannsen@gmail.com"
-    },
-    {
-      "name": "Erick Barbosa",
-      "email": "erickpark@hotmail.com"
-    }
+    "Venilton FalvoJr <falvojr@gmail.com>",
+    "Renan Johannsen de Paula <renanjohannsen@gmail.com>",
+    "Erick Barbosa <erickpark@hotmail.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/brain-machine/browsenpm.org"
+    "url": "https://github.com/falvojr/brain-tv"
+  },
+  "bugs": {
+    "url": "https://github.com/falvojr/brain-tv/issues"
   },
   "keywords": [
     "angularjs",
-    "express",
-    "node"
+    "nodejs"
   ],
-  "license": "Apache",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.14.1",
     "compression": "^1.6.0",
+    "cors": "^2.7.1",
     "express": "^4.13.3",
-    "morgan": "^1.6.1"
+    "morgan": "^1.6.1",
+    "serve-favicon": "^2.3.0",
+    "serve-index": "^1.7.2"
+  },
+  "devDependencies": {
+
   }
 }

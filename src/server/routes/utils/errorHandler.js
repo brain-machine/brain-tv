@@ -15,7 +15,6 @@ module.exports = function() {
         next();
     }
 
-    /* Our fall through error logger and errorHandler  */
     function logErrors(err, req, res, next) {
         var status = err.statusCode || 500;
         console.error(status + ' ' + (err.message ? err.message : err));

@@ -1,14 +1,20 @@
 module.exports = function(app) {
-    var jsonfileservice = require('./../data/fileService')();
 
-    app.get('/api/maa', getMaa);
+    var express = require('express');
+    var fs = require('fs');
+    var serveIndex = require('serve-index');
 
-    function getMaa(req, res, next) {
-        var json = jsonfileservice.getJsonFromFile('/../../data/maa.json');
-        json[0].data.results.forEach(function(character) {
-            var pos = character.name.indexOf('(MAA)');
-            character.name = character.name.substr(0, pos - 1);
+    app.use('/static', express.static('/home/falvojr/Dropbox', { maxAge: 86400000 }));  // provides static access to
+    app.use('/static', serveIndex('/home/falvojr/Dropbox', {'icons': true}));
+
+    app.get('/api/dropbox', getDropboxFiles);
+
+    function getDropboxFiles(req, res, next) {
+        console.log("Entrou!");
+        fs.readdir('/home/falvojr/Dropbox', 'utf8', function (err,data) {
+            console.log("Entrou!");
+            if (err) throw err;
+            res.send("/usr files: " + files);
         });
-        res.send(json);
     }
 };
