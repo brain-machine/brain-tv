@@ -1,3 +1,8 @@
+/**
+ * Created by falvojr on 12/10/15.
+ */
+'use strict'
+
 module.exports = function() {
     var service = {
         init: init,
@@ -24,4 +29,3 @@ module.exports = function() {
         next(err);
     }
 };
-
