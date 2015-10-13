@@ -1,0 +1,40 @@
+{
+  "name": "brain-tv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brain Machine",
+  "contributors": [
+    {
+      "name": "Venilton FalvoJr",
+      "email": "falvojr@gmail.com"
+    },
+    {
+      "name": "Renan Johannsen de Paula",
+      "email": "renanjohannsen@gmail.com"
+    },
+    {
+      "name": "Erick Barbosa",
+      "email": "erickpark@hotmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brain-machine/browsenpm.org"
+  },
+  "keywords": [
+    "angularjs",
+    "express",
+    "node"
+  ],
+  "license": "Apache",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "compression": "^1.6.0",
+    "express": "^4.13.3",
+    "morgan": "^1.6.1"
+  }
+}
