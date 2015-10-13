@@ -21,6 +21,7 @@
   "bugs": {
     "url": "https://github.com/falvojr/brain-tv/issues"
   },
+  "readme": "README.md",
   "keywords": [
     "angularjs",
     "nodejs"
