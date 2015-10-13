@@ -27,13 +27,21 @@ module.exports = function (app) {
                 var fileName = data[index];
                 if (fileName.slice(0, 1) != '.') {
                     var image = {
-                        name: fileName,
-                        path: req.originalUrl + fileName
+                        name: getFileWithoutExtension(fileName),
+                        url: getFullOriginalUrl(req) + fileName
                     }
                     images.push(image);
                 }
             }
             res.send(images);
         });
+    }
+
+    function getFileWithoutExtension(fileName) {
+        return (/[.]/.exec(fileName)) ? fileName.replace(/\.[^.]+$/, '') : fileName;
+    }
+
+    function getFullOriginalUrl(req) {
+        return req.protocol + '://' + req.get('host') + req.originalUrl;
     }
 };
