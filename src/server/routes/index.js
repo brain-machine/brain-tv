@@ -25,7 +25,8 @@ module.exports = function (app) {
             console.log(data)
             for (var index = 0, size = data.length; index < size; ++index) {
                 var fileName = data[index];
-                if (fileName.slice(0, 1) != '.') {
+                var isDotIgnore = fileName.slice(0, 1) == '.';
+                if (!isDotIgnore) {
                     var image = {
                         name: getFileWithoutExtension(fileName),
                         url: getFullOriginalUrl(req) + fileName
