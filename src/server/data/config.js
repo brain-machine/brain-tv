@@ -4,5 +4,5 @@
 'use strict'
 
 module.exports = Object.freeze({
-    PATH_DROPBOX: '/home/falvojr/Dropbox'
+    DROPBOX_DIRECTORY: '/home/falvojr/Dropbox'
 });
