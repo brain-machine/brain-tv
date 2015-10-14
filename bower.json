@@ -1,0 +1,23 @@
+{
+  "name": "brain-tv",
+  "version": "1.0.0",
+  "description": "Project for the domain of smart advertisements",
+  "dependencies": {
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4"
+  },
+  "authors": [
+    "Venilton FalvoJr <falvojr@gmail.com>",
+    "Renan Johannsen de Paula <renanjohannsen@gmail.com>",
+    "Erick Barbosa <erickpark@hotmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

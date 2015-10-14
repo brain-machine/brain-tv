@@ -2,21 +2,21 @@
   "name": "brain-tv",
   "version": "1.0.0",
   "description": "Project for the domain of smart advertisements",
-  "scripts": {
-    "init": "npm install",
-    "install": "bower install",
-    "start": "node src/server/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Brain Machine",
   "contributors": [
     "Venilton FalvoJr <falvojr@gmail.com>",
     "Renan Johannsen de Paula <renanjohannsen@gmail.com>",
     "Erick Barbosa <erickpark@hotmail.com>"
   ],
+  "scripts": {
+    "init": "npm install",
+    "install": "bower install",
+    "start": "node src/server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/falvojr/brain-tv"
+    "url": "https://github.com/falvojr/brain-tv.git"
   },
   "bugs": {
     "url": "https://github.com/falvojr/brain-tv/issues"
@@ -35,8 +35,5 @@
     "morgan": "^1.6.1",
     "serve-favicon": "^2.3.0",
     "serve-static": "^1.10.0"
-  },
-  "devDependencies": {
-
   }
 }
