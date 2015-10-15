@@ -22,6 +22,14 @@
             $scope.w = window.innerWidth;
             $scope.h = window.innerHeight;
 
+            getAllImages();
+
+            coreService.onUpdateImages(function() {
+                getAllImages();
+            });
+        }
+
+        function getAllImages() {
             var promise = coreService.getDropboxImages();
             promise.then(successCallback, errorCallback);
         }

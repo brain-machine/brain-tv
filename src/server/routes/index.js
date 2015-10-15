@@ -5,7 +5,9 @@
 
 var dataConfig = require('../data/config');
 var fs = require('fs');
-var gm = require('gm').subClass({ imageMagick: true });
+var gm = require('gm').subClass({imageMagick: true});
+var watchr = require('watchr');
+var io = require('socket.io').listen(3001);
 
 module.exports = function (app) {
 
@@ -16,9 +18,6 @@ module.exports = function (app) {
     function getImage(req, res, next) {
         var heigth = req.query.h;
         var weight = req.query.w;
-
-        console.log(weight + "x" + heigth);
-        console.log(req.params.file);
 
         gm(dataConfig.DROPBOX_DIRECTORY + req.params.file)
             .resize(weight, heigth)
@@ -39,7 +38,7 @@ module.exports = function (app) {
                         id: id++,
                         name: getFileWithoutExtension(fileName),
                         url: getFullOriginalUrl(req) + fileName
-                    }
+                    };
                     images.push(image);
                 }
             }
@@ -54,4 +53,13 @@ module.exports = function (app) {
     function getFullOriginalUrl(req) {
         return req.protocol + '://' + req.get('host') + req.originalUrl + "/";
     }
+
+    watchr.watch({
+        paths: [dataConfig.DROPBOX_DIRECTORY],
+        listeners: {
+            change: function (changeType, filePath, fileCurrentStat, filePreviousStat) {
+                io.emit('update-images');
+            }
+        }
+    });
 };
