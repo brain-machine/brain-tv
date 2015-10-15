@@ -16,7 +16,7 @@
         ////////////////
 
         function getDropboxImages() {
-            return $http.get('/api/images');
+            return $http.get('/api/image');
         }
     }
 

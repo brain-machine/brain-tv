@@ -24,13 +24,13 @@
 <body>
 <div>
     <div class="container" ng-controller="CarouselController as vm">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1000">
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" ng-repeat="img in images" class="{active : (img === 0)}" data-slide-to="{{img}}"></li>
+                <li data-target="#myCarousel" ng-repeat="img in images" class="{active : (img.id === 0)}" data-slide-to="{{img.id}}"></li>
             </ol>
             <div class="carousel-inner">
-                <div ng-class="{item: true, active : (img === 0)}" ng-repeat="img in images">
-                    <img ng-src="{{uri}}/{{w}}/{{h}}/{{currentFolder}}/{{img}}" alt="Slide numder {{img}}">
+                <div ng-class="{item: true, active : (img.id === 0)}" ng-repeat="img in images">
+                    <img ng-src="{{img.url}}?w={{w}}&h={{h}}" alt="{{img.name}}">
                     <div class="container">
                         <div class="carousel-caption"></div>
                     </div>
@@ -51,6 +51,7 @@
 
 <!-- core module -->
 <script src="app/core/core.config.js"></script>
+<script src="app/core/core.controller.js"></script>
 <script src="app/core/core.service.js"></script>
 
 </body>
