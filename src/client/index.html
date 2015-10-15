@@ -24,7 +24,7 @@
 <body>
 <div>
     <div class="container" ng-controller="CarouselController as vm">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1000">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" ng-repeat="img in images" class="{active : (img.id === 0)}" data-slide-to="{{img.id}}"></li>
             </ol>
